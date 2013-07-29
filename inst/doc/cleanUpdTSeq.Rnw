@@ -1,0 +1,110 @@
+%\VignetteIndexEntry{cleanUpdTSeq Vignette}
+%\VignetteDepends{cleanUpdTSeq}
+%\VignetteKeywords{cleanUpdTSeq 3 prime end sequencing oligodT}
+%\VignettePackage{cleanUpdTSeq}
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{fullpage}
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{plainnat}
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+
+\author{Sarah Sheppard, Nathan Lawson, Lihua Julie Zhu\footnote{sarah.sheppard@umassmed.edu, julie.zhu@umassmed.edu}}
+\begin{document}
+\title{The cleanUpdTSeq user's guide}
+
+\maketitle
+
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+3' ends of transcripts have generally been poorly annotated. With the advent of deep sequencing, many methods have been developed to identify 3' ends. The majority of these methods use an oligo-dT primer, which can bind to internal adenine-rich sequences, and lead to artifactual identification of polyadenylation sites. Heuristic filtering methods rely on a certain number of adenines in the genomic sequence downstream of a putative polyadenylation site to remove internal priming events. We introduce a package to provide a robust method to classify putative polyadenylation sites. cleanUpdTSeq uses a na\"{i}ve Bayes classifier, implemented through the \Rpackage{e1071} [1], and sequence features surrounding the putative polyadenylation sites for classification.
+
+The package includes a training dataset constructed from 6 different Zebrafish sequencing dataset, and functions for fetching surrounding sequences using BSgenome [2], building feature vectors and classifying whether the putative polyadenylations site is a true polyadenylation site or a mis-primed false site.
+
+A paper has been submitted to Bioinformatics and currently under revision [3].
+
+\section{step-by-step guide}
+
+Here is a step-by-step guide on using cleanUpdTSeq to classify a list of putative polyadenylation sites
+
+\subsection{Step 1. Load the package cleanUpdTSeq, read in the test dataset and then use the function BED2GRangesSeq to convert it to GRanges.}
+
+\begin{scriptsize}
+<<1>>=
+library(cleanUpdTSeq)
+testFile <- system.file("extdata", "test.bed", package="cleanUpdTSeq")
+testSet <- read.table(testFile, sep="\t", header=TRUE)
+peaks <- BED2GRangesSeq(testSet, withSeq=FALSE)
+@
+\end{scriptsize}
+
+If test dataset contains sequence information already, then use the following command instead.
+
+\begin{scriptsize}
+<<2>>=
+peaks <- BED2GRangesSeq(testSet, upstream.seq.ind=7, 
+                          downstream.seq.ind=8, withSeq=TRUE)
+@
+\end{scriptsize}
+
+To work with your own test dataset, please set testFile to the file path that contains the putative sites.
+
+Here is how the test dataset look like.
+
+\begin{scriptsize}
+<<3>>=
+head(testSet)
+@
+\end{scriptsize}
+
+\subsection{Step2. Build feature vectors for the classifier using the function buildFeatureVector.}
+The zebrafish genome from BSgenome is used in this example for obtaining surrounding sequences. For a list of other genomes available through BSgenome, please refer to the BSgenome package documentation [2].
+
+\begin{scriptsize}
+<<4>>=
+testSet.NaiveBayes <- buildFeatureVector(peaks, BSgenomeName=Drerio,
+                                         upstream=40, downstream=30, 
+                                         wordSize=6, alphabet=c("ACGT"),
+                                         sampleType="unknown", 
+                                         replaceNAdistance=30, 
+                                         method="NaiveBayes",
+                                         ZeroBasedIndex=1, fetchSeq=TRUE)
+@
+\end{scriptsize}
+
+If sequences are present in the test dataset already, then set fetchSeq=FALSE.
+
+\subsection{Step 3. Load the training dataset and classify putative polyadenylation sites.}
+
+\begin{scriptsize}
+<<5>>=
+data(data.NaiveBayes)
+if(interactive()){
+    predictTestSet(data.NaiveBayes$Negative, data.NaiveBayes$Positive, 
+                   testSet.NaiveBayes=testSet.NaiveBayes, 
+                   outputFile="test-predNaiveBayes.tsv", 
+                   assignmentCutoff=0.5)
+}
+@
+\end{scriptsize}
+
+The output file is a tab-delimited file containing the name of the putative
+polyadenylation sites, the probability that the putative polyadenylation site is false/oligodT internally primed, the probability the putative polyadenylation site is true, the predicted class based on the assignment cutoff and the sequence surrounding the putative polyadenylation site.
+
+
+\section{References}
+1. Meyer, D., et al., e1071: Misc Functions of the Department of Statistics (e1071), TU Wien. 2012.
+\\2. Pages, H., BSgenome: Infrastructure for Biostrings-based genome data packages.
+\\3. Sarah Sheppard, Nathan D. Lawson, and Lihua Julie Zhu.  2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a na\"{i}ve Bayes classifier. Bioinformatics. Under revision 
+
+
+\section{Session Info}
+<<>>=
+sessionInfo()
+@
+\end{document}

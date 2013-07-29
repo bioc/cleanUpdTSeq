@@ -1,0 +1,7 @@
+import(BiocGenerics)
+import(seqinr)
+import(GenomicRanges)
+import(e1071)
+import(BSgenome)
+
+export(BED2GRangesSeq, getUpstreamSequence, getDownstreamSequence, buildFeatureVector, predictTestSet)

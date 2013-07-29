@@ -1,0 +1,16 @@
+Package: cleanUpdTSeq
+Type: Package
+Title: This package classifies putative polyadenylation sites as true
+        or false/internally oligodT primed.
+Version: 0.99.3
+Date: 2013-07-22
+Author: Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
+Maintainer: Sarah Sheppard <Sarah.Sheppard@umassmed.edu>; Jianhong Ou
+        <Jianhong.Ou@umassmed.edu>; Lihua Julie Zhu
+        <Julie.Zhu@umassmed.edu>
+Depends: R (>= 2.15), BiocGenerics (>= 0.1.0), BSgenome,
+        BSgenome.Drerio.UCSC.danRer7, GenomicRanges, seqinr, e1071
+biocViews: HighThroughputSequencing, SequenceMatching, Genetics,
+        GeneRegulation
+Description: This package uses the Naive Bayes classifier (from e1071) to assign probability values to putative polyadenylation sites (pA sites) based on training data from zebrafish. This will allow the user to separate true, biologically relevant pA sites from false, oligodT primed pA sites. 
+License: GPL-2
