@@ -2,7 +2,7 @@ Package: cleanUpdTSeq
 Type: Package
 Title: This package classifies putative polyadenylation sites as true
         or false/internally oligodT primed.
-Version: 1.0.0
+Version: 1.1.0
 Date: 2013-07-22
 Author: Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 Maintainer: Sarah Sheppard <Sarah.Sheppard@umassmed.edu>; Jianhong Ou
