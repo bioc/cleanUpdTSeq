@@ -1,5 +1,6 @@
 import(BiocGenerics)
 import(seqinr)
+import(BSgenome.Drerio.UCSC.danRer7)
 import(GenomicRanges)
 import(e1071)
 import(BSgenome)
