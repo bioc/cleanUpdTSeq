@@ -9,7 +9,7 @@ getDownstreamSequence <-
             stop("peaks is required as GRanges object!")
         }        
         
-        peaksStrand <- strand(peaks)
+        peaksStrand <- as.character(strand(peaks))
         plus.peaks <- peaks[peaksStrand %in% c("*", "+", "1")]
         minus.peaks <- peaks[peaksStrand %in% c("-", "-1")]
         

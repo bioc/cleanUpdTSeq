@@ -1,0 +1,48 @@
+CHANGES IN VERSION 1.1.3
+-----------------------
+
+NEW FEATURES
+
+    o No changes classified as "new features" (package under active
+    development)
+
+BUG FIXES
+
+    o Fix the bugs 'match' requires vector arguments when using %in%
+
+
+CHANGES IN VERSION 1.1.2
+-----------------------
+
+NEW FEATURES
+
+    o Add citation
+
+BUG FIXES
+
+    o No changes classified as 'bug fixes' (package under active
+    development)
+
+CHANGES IN VERSION 1.1.1
+-----------------------
+
+NEW FEATURES
+
+    o Re-name the inst/doc directory to vignettes
+
+BUG FIXES
+
+    o No changes classified as 'bug fixes' (package under active
+    development)
+
+CHANGES IN VERSION 1.1.0
+-----------------------
+
+NEW FEATURES
+
+    o New package released in bioconductor
+
+BUG FIXES
+
+    o No changes classified as 'bug fixes' (package under active
+    development)
