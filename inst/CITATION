@@ -1,0 +1,32 @@
+citHeader("Please cite the paper below for the cleanUpdTSeq package.")
+
+citEntry(entry="Article",
+         title="Accurate identification of polyadenylation sites from 3' end deep 
+sequencing using a naive Bayes classifier",
+         author="Sheppard, Sarah and Lawson, Nathan and Zhu, Lihua",
+         journal="Bioinformatics",
+         volume=29,
+         year=2013,
+         number=20,
+         pages=2564,
+         url="http://bioinformatics.oxfordjournals.org/content/29/20/2564.long",
+         doi="10.1093/bioinformatics/btt446",
+         PubMedID="23962617",
+         ISSN="1460-2059",
+         abstract="MOTIVATION: 3' end processing is important for transcription 
+termination, mRNA stability and regulation of gene expression. To identify 3' 
+ends, most techniques use an oligo-dT primer to construct deep sequencing 
+libraries. However, this approach can lead to identification of artifactual 
+polyadenylation sites due to internal priming in homopolymeric stretches of 
+adenines. Although heuristic filters have been applied in these cases, they 
+typically result in a high proportion of both false-positive and -negative 
+classifications. Therefore, there is a need to develop improved algorithms to 
+better identify mis-priming events in oligo-dT primed sequences. 
+RESULTS: By analyzing sequence features flanking 3' ends derived from oligo-dT-based sequencing, we developed a naive Bayes classifier to classify them as true or 
+false/internally primed. The resulting algorithm is highly accurate, outperforms 
+previous heuristic filters and facilitates identification of novel 
+polyadenylation sites.",
+         textVersion="Sheppard S, Lawson ND, Zhu LJ. Accurate identification of 
+polyadenylation sites from 3' end deep sequencing using a naive Bayes classifier. 
+Bioinformatics 2013 Oct 15;29(20):2564-71"
+)
