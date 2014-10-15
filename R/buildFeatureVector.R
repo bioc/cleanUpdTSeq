@@ -1,11 +1,17 @@
 buildFeatureVector <- function(peaks, BSgenomeName=Drerio, 
-                               upstream=50, downstream=40, 
-                               wordSize=6, alphabet=c("ACGT"), 
+                               upstream=50L, downstream=40L, 
+                               wordSize=6L, alphabet=c("ACGT"), 
                                sampleType=c("TP", "TN",  "unknown"),
-                               replaceNAdistance=40, 
+                               replaceNAdistance=40L, 
                                method=c("NaiveBayes", "SVM"), 
-                               ZeroBasedIndex=1, fetchSeq=FALSE)
+                               ZeroBasedIndex=1L, fetchSeq=FALSE)
 {
+    if((!class(upstream) %in% c("integer", "numeric")) ||
+           (!class(downstream) %in% c("integer", "numeric")) ||
+           (!class(wordSize) %in% c("integer", "numeric")))
+        stop("upstream, downstream and wordSize must be objects of integer")
+    if(class(BSgenomeName)!="BSgenome")
+        stop("BSgenomeName must be an object BSgenome")
     #### use peak end as the separator to get 50bp upstream and 40 bp downstream
     #### for peak at negative strand, it is the reverse complement of the plus strand
     if (fetchSeq == TRUE)
@@ -153,5 +159,9 @@ buildFeatureVector <- function(peaks, BSgenomeName=Drerio,
     {
         rownames(newData1) <- as.character(names(peaks))
     }
-    newData1
+    
+    new("featureVector", data=newData1, 
+        info=new("modelInfo", genome=BSgenomeName,
+        upstream=as.integer(upstream), downstream=as.integer(downstream), 
+        wordSize=as.integer(wordSize), alphabet=alphabet))
 }

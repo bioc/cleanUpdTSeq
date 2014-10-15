@@ -8,10 +8,10 @@ buildFeatureVector
 This function creates a data frame. Fields include peak name, upstream sequence, downstream sequence, and features to be used in classifying the putative polyadenylation site. 
 }
 \usage{
-buildFeatureVector(peaks, BSgenomeName = Drerio, upstream = 50, 
-	downstream = 40, wordSize = 6, alphabet = c("ACGT"),
- sampleType = c("TP", "TN", "unknown"), replaceNAdistance = 40,
- method = c("NaiveBayes", "SVM"), ZeroBasedIndex = 1, fetchSeq = FALSE)
+buildFeatureVector(peaks, BSgenomeName = Drerio, upstream = 50L, 
+	downstream = 40L, wordSize = 6L, alphabet = c("ACGT"),
+ sampleType = c("TP", "TN", "unknown"), replaceNAdistance = 40L,
+ method = c("NaiveBayes", "SVM"), ZeroBasedIndex = 1L, fetchSeq = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -49,8 +49,8 @@ Boolean, for getting upstream and downstream sequence at this step or not.
 }
 }
 \value{
-  An object of data frame. Fields include peak name, upstream sequence, downstream sequence, and features to be used in classifying the putative polyadenylation site
-}
+  An object of "\code{\link{featureVector}}"
+ }
 \author{
 Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 }

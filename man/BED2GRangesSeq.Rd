@@ -8,7 +8,9 @@ BED2GRangesSeq
 This function converts an object of data.frame from a bed file with sequence information to GRanges with sequence information. 
 }
 \usage{
-BED2GRangesSeq(data.BED, header = FALSE, upstream.seq.ind = 7, downstream.seq.ind = 8, withSeq)
+BED2GRangesSeq(data.BED, header = FALSE, 
+               upstream.seq.ind = 7, downstream.seq.ind = 8, 
+               withSeq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

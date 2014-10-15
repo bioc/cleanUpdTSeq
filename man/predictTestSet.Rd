@@ -8,7 +8,7 @@ predictTestSet
 This function can be used to predict the probabilities for a set of putative pA sites.
 }
 \usage{
-predictTestSet(Ndata.NaiveBayes, Pdata.NaiveBayes, testSet.NaiveBayes,
+predictTestSet(Ndata.NaiveBayes, Pdata.NaiveBayes, testSet.NaiveBayes, classifier=NULL,
  outputFile = "test-predNaiveBayes.tsv", assignmentCutoff = 0.5)
 }
 %- maybe also 'usage' for other objects documented here.
@@ -19,6 +19,7 @@ This is the negative training data, described further in \link{data.NaiveBayes}.
   \item{Pdata.NaiveBayes}{
 This is the positive training data, described further in \link{data.NaiveBayes}.
 }
+  \item{classifier}{An object of class "naiveBayes".}
   \item{testSet.NaiveBayes}{
 This is the test data, a feature vector that has been built for Naive Bayes analysis using the function "buildFeatureVector".
 }
@@ -37,12 +38,14 @@ The output is written to a tab separated file containing fields for peak name, t
 	\item{pred.class }{This is the predicted class of the putative pA site, based on the assignment cutoff. 0= Falsee/oligodT internally primed, 1 = True}
 	\item{UpstreamSeq}{This is the upstream sequence of the putative pA site used in the analysis.}
 	\item{DownstreamSeq}{This is the downstream sequence of the putative pA site used in the analysis.}
+    
+The function also return an invisible matrix including all info as decribed above.
 }
 \references{
 Sarah Sheppard, Nathan D. Lawson, and Lihua Julie Zhu.  2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a na\"{i}ve Bayes classifier. Bioinformatics. Under revision 
 }
 \author{
-Sarah Sheppard, Nathan Lawson, Lihua Julie Zhu
+Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -66,11 +69,11 @@ Sarah Sheppard, Nathan Lawson, Lihua Julie Zhu
     samp <- c(1:22, sample(23:4119, 50), 4119, 4120)
     Ndata.NaiveBayes <- data.NaiveBayes$Negative[,samp]
     Pdata.NaiveBayes <- data.NaiveBayes$Positive[,samp]
-    testSet.NaiveBayes <- testSet.NaiveBayes[, samp-1]
+    testSet.NaiveBayes@data <- testSet.NaiveBayes@data[, samp-1]
     ## END SAMPLING
     
 	predictTestSet(Ndata.NaiveBayes, 
-                   Pdata.NaiveBayes, 
+                   Pdata.NaiveBayes,
                    testSet.NaiveBayes,
 	               outputFile="test-predNaiveBayes.xls", 
                    assignmentCutoff = 0.5)
