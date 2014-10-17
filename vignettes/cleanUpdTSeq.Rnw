@@ -95,7 +95,7 @@ if(interactive()){
 @
 
 
-Alternatively, instead of passing in a positive and a negative training dataset, set the parameter classifier to a pre-built \Rclass{PASclassifier} to speed up the process. To built a \Rclass{PASclassifier} using the training dataset, please use function \Rfunction{buildClassifier}. A \Rclass{PASclassifier} named as \Robject{classifier} is included in the package which is generated using the included training dataset with upstream=40, downstream=30, and wordSize=6. Please note that in order use this pre-built classier, you need to build feature vector using the same setting, i.e., upstream=40, downstream=30, and wordSize=6. 
+Alternatively, instead of passing in a positive and a negative training dataset, set the parameter classifier to a pre-built \Rclass{PASclassifier} to speed up the process. To built a \Rclass{PASclassifier} using the training dataset, please use function \Rfunction{buildClassifier}. A \Rclass{PASclassifier} named as \Robject{classifier} is included in the package which is generated using the included training dataset with upstream=40, downstream=30, and wordSize=6. Please note that in order to use this pre-built classier, you need to build feature vector using buildFeatureVector from your test dataset with the same setting, i.e., upstream=40, downstream=30, and wordSize=6. 
 
 
 <<6>>=

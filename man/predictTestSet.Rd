@@ -19,7 +19,7 @@ This is the negative training data, described further in \link{data.NaiveBayes}.
   \item{Pdata.NaiveBayes}{
 This is the positive training data, described further in \link{data.NaiveBayes}.
 }
-  \item{classifier}{An object of class "naiveBayes".}
+  \item{classifier}{An object of class \link{PASclassifier}.}
   \item{testSet.NaiveBayes}{
 This is the test data, a feature vector that has been built for Naive Bayes analysis using the function "buildFeatureVector".
 }
