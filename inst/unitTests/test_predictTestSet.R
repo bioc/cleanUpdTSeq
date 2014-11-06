@@ -9,7 +9,7 @@ test_predictTestSet <- function(){
                    assignmentCutoff = 0.5)
     x <- read.delim(system.file("extdata", "test-predNaiveBayes.xls", package="cleanUpdTSeq"))
     y <- read.delim(tmpfile)
-    checkIdentical(x, y)
+    checkIdentical(format(x, digits=7), format(y, digits=7))
     unlink(tmpfile)
     classifier <- buildClassifier(Ndata.NaiveBayes, 
                                   Pdata.NaiveBayes)
@@ -18,6 +18,6 @@ test_predictTestSet <- function(){
                    outputFile=tmpfile, 
                    assignmentCutoff = 0.5)
     z <- read.delim(tmpfile)
-    checkIdentical(x, z)
+    checkIdentical(format(x, digits=7), format(z, digits=7))
     unlink(tmpfile)
 }

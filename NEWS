@@ -1,3 +1,15 @@
+CHANGES IN VERSION 1.5.3
+-----------------------
+
+NEW FEATURES
+
+    o No changes classified as "new features" (package under active
+    development)
+
+BUG FIXES
+
+    o Fix the bugs in test files for different output of 64bit vs 32bit version.
+
 CHANGES IN VERSION 1.5.2
 -----------------------
 
