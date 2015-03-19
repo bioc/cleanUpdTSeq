@@ -1,3 +1,17 @@
+CHANGES IN VERSION 1.5.4
+-----------------------
+
+NEW FEATURES
+
+    o export $ and $<- methods for class PASclassifier, modelInfo and 
+      featureVector.
+
+BUG FIXES
+
+    o No changes classified as "bug fixes" (package under active
+    development)
+
+
 CHANGES IN VERSION 1.5.3
 -----------------------
 

@@ -1,3 +1,4 @@
+import(methods)
 import(BiocGenerics)
 import(seqinr)
 import(BSgenome.Drerio.UCSC.danRer7)
@@ -5,4 +6,10 @@ import(GenomicRanges)
 import(e1071)
 import(BSgenome)
 exportClasses("modelInfo", "PASclassifier", "featureVector")
-export(BED2GRangesSeq, getUpstreamSequence, getDownstreamSequence, buildFeatureVector, predictTestSet, buildClassifier)
+exportMethods("$", "$<-")
+export(BED2GRangesSeq, 
+       getUpstreamSequence, 
+       getDownstreamSequence, 
+       buildFeatureVector, 
+       predictTestSet, 
+       buildClassifier)

@@ -2,6 +2,8 @@
 \docType{class}
 \alias{modelInfo-class}
 \alias{modelInfo}
+\alias{$,modelInfo-method}
+\alias{$<-,modelInfo-method}
 
 \title{Class \code{"modelInfo"}}
 \description{
@@ -28,6 +30,11 @@ This is the size of the word to use as a feature for the upstream sequence. word
 These are the bases to use, for example DNA bases ACTG.
 }
   }
+}
+\section{Methods}{
+    \describe{
+        \item{$, $<-}{Get or set the slot of \code{\link{modelInfo}}}
+    }
 }
 \keyword{classes}
 

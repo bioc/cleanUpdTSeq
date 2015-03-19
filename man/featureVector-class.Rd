@@ -2,6 +2,8 @@
 \docType{class}
 \alias{featureVector-class}
 \alias{featureVector}
+\alias{$,featureVector-method}
+\alias{$<-,featureVector-method}
 
 \title{Class \code{"featureVector"}}
 \description{
@@ -18,6 +20,11 @@
     }
     \item{info}{ Object of class \code{\link{modelInfo}}}
   }
+}
+\section{Methods}{
+    \describe{
+        \item{$, $<-}{Get or set the slot of \code{\link{featureVector}}}
+    }
 }
 \keyword{classes}
 

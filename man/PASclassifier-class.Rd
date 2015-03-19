@@ -2,6 +2,8 @@
 \docType{class}
 \alias{PASclassifier-class}
 \alias{PASclassifier}
+\alias{$,PASclassifier-method}
+\alias{$<-,PASclassifier-method}
 
 \title{Class \code{"PASclassifier"}}
 \description{
@@ -23,10 +25,15 @@
     \item{info}{ Object of class \code{\link{modelInfo}}}
   }
 }
+\section{Methods}{
+    \describe{
+        \item{$, $<-}{Get or set the slot of \code{\link{PASclassifier}}}
+    }
+}
 \examples{
 data(classifier)
-classifier@info@upstream
-classifier@info@wordSize
-classifier@info@alphabet
+classifier$info$upstream
+classifier$info$wordSize
+classifier$info$alphabet
 }
 \keyword{classes}

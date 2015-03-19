@@ -2,13 +2,13 @@ Package: cleanUpdTSeq
 Type: Package
 Title: This package classifies putative polyadenylation sites as true
         or false/internally oligodT primed.
-Version: 1.5.3
+Version: 1.5.4
 Date: 2014-11-06
 Author: Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 Maintainer: Sarah Sheppard <Sarah.Sheppard@umassmed.edu>; Jianhong Ou
         <Jianhong.Ou@umassmed.edu>; Lihua Julie Zhu
         <Julie.Zhu@umassmed.edu>
-Depends: R (>= 2.15), BiocGenerics (>= 0.1.0), BSgenome,
+Depends: R (>= 2.15), BiocGenerics (>= 0.1.0), methods, BSgenome,
         BSgenome.Drerio.UCSC.danRer7, GenomicRanges, seqinr, e1071
 Description: This package uses the Naive Bayes classifier (from e1071)
         to assign probability values to putative polyadenylation sites
