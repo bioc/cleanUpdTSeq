@@ -3,7 +3,7 @@ citHeader("Please cite the paper below for the cleanUpdTSeq package.")
 citEntry(entry="Article",
          title="Accurate identification of polyadenylation sites from 3' end deep 
 sequencing using a naive Bayes classifier",
-         author="Sheppard, Sarah and Lawson, Nathan and Zhu, Lihua",
+         author=personList(as.person("Sarah Sheppard"), as.person("Nathan Lawson"), as.person("Lihua Zhu")),
          journal="Bioinformatics",
          volume=29,
          year=2013,
