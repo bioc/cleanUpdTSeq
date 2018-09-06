@@ -32,7 +32,7 @@ Maintainer: Sarah Sheppard <Sarah.Sheppard@umassmed.edu>, Jianhong Ou <Jianhong.
 \examples{
 #read in a test set
 #### first install the package using the following command
-#### biocLite("cleanUpdTSeq")
+#### BiocManager::install("cleanUpdTSeq")
 if (interactive())
 {
 	library(cleanUpdTSeq)
