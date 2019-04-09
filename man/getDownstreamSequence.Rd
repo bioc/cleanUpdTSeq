@@ -28,6 +28,7 @@ Returns an object of GRanges with downtream sequences.
 Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 }
 \examples{
+library(BSgenome.Drerio.UCSC.danRer7)
         testFile <- system.file("extdata", "test.bed", package="cleanUpdTSeq")
         testSet <- read.table(testFile, sep="\t", header=TRUE)
         peaks <- BED2GRangesSeq(testSet[1:10, ], withSeq=FALSE)
