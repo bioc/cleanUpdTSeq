@@ -8,11 +8,11 @@ predictTestSet <-
     {
         if(missing(testSet.NaiveBayes))
             stop("testSet.NaiveBayes is required")
-        if(class(testSet.NaiveBayes)!="featureVector")
+        if(!is(testSet.NaiveBayes, "featureVector"))
             stop("testSet.NaiveBayes must be an object of class \"featureVector\"")
         i <- length(colnames(testSet.NaiveBayes@data)) - 1
         if(!is.null(classifier)){
-            if(class(classifier)!="PASclassifier") 
+            if(!is(classifier, "PASclassifier"))
                 stop("classifier must be an object of class \"PASclassifier\"")
             if(classifier@info@upstream==testSet.NaiveBayes@info@upstream &&
                    classifier@info@downstream==testSet.NaiveBayes@info@downstream &&

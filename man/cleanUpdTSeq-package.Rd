@@ -42,6 +42,7 @@ if (interactive())
 	#convert the test set to GRanges with upstream and downstream sequence information
 	peaks = BED2GRangesSeq(testSet,upstream.seq.ind = 7, downstream.seq.ind = 8, withSeq=TRUE)
 	#build the feature vector for the test set with sequence information 
+	library(BSgenome.Drerio.UCSC.danRer7)
 	testSet.NaiveBayes = buildFeatureVector(peaks,BSgenomeName = Drerio, upstream = 40,
 	 downstream = 30, wordSize = 6, alphabet=c("ACGT"),
 	 sampleType = "unknown",replaceNAdistance = 30, 
