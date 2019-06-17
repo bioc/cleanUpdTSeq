@@ -26,7 +26,7 @@ Maintainer: Sarah Sheppard <Sarah.Sheppard@umassmed.edu>, Jianhong Ou <Jianhong.
 
 2. Pages, H., BSgenome: Infrastructure for Biostrings-based genome data packages.
 
-3. Sarah Sheppard, Nathan D. Lawson, and Lihua Julie Zhu.  2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a na\"{i}ve Bayes classifier. Bioinformatics. Under revision 
+3. Sheppard, S., Lawson, N.D. and Zhu, L.J., 2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a naive Bayes classifier. Bioinformatics, 29(20), pp.2564-2571.
 }
 
 \examples{
