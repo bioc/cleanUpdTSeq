@@ -22,7 +22,11 @@ output:
 
 The package includes a training dataset constructed from 6 different Zebrafish sequencing dataset, and functions for fetching surrounding sequences using BSgenome [2], building feature vectors and classifying whether the putative polyadenylations site is a true polyadenylation site or a mis-primed false site.
 
-A paper has been submitted to Bioinformatics and currently under revision [3].
+# Citation
+If  you use cleanUpdTSeq, please cite:
+
+> Sheppard, S., Lawson, N.D. and Zhu, L.J., 2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a naive Bayes classifier. Bioinformatics, 29(20), pp.2564-2571.
+
 
 # step-by-step guide
 
@@ -110,7 +114,7 @@ head(testResults)
 
 2. Pages, H., BSgenome: Infrastructure for Biostrings-based genome data packages.
 
-3. Sarah Sheppard, Nathan D. Lawson, and Lihua Julie Zhu.  2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a na&iuml;ve Bayes classifier. Bioinformatics. Under revision 
+3. Sheppard, S., Lawson, N.D. and Zhu, L.J., 2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a naive Bayes classifier. Bioinformatics, 29(20), pp.2564-2571.
 
 
 # Session Info
