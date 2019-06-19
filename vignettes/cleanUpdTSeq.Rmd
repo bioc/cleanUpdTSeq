@@ -4,11 +4,14 @@ author: "Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu"
 date: "`r doc_date()`"
 package: "`r pkg_ver('cleanUpdTSeq')`"
 abstract: >
-   This package uses the Naive Bayes classifier (from e1071)
-   to assign probability values to putative polyadenylation sites
-   (pA sites) based on training data from zebrafish. This will
-   allow the user to separate true, biologically relevant pA sites
-   from false, oligodT primed pA sites.
+   This package implements a published Naive Bayes classifier 
+   for accurate identification of polyadenylation sites
+   (pA sites) from oligodT based 3 prime end sequencing 
+   such as PAS-Seq, PolyA-Seq and RNA-Seq. The classifer 
+   is highly accurate and outperforms heuristic methods.
+   Even though the classfier has been trained using Zebrafish data,
+   it works well with other species as demonstrated in several organisms
+   including human, mouse, rat, dog and monkey.
 vignette: >
   %\VignetteIndexEntry{cleanUpdTSeq Vignette}
   %\VignetteEngine{knitr::rmarkdown}
@@ -25,8 +28,7 @@ The package includes a training dataset constructed from 6 different Zebrafish s
 # Citation
 If  you use cleanUpdTSeq, please cite:
 
-> Sheppard, S., Lawson, N.D. and Zhu, L.J., 2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a naive Bayes classifier. Bioinformatics, 29(20), pp.2564-2571.
-
+> Sheppard, S., Lawson, N.D. and Zhu, L.J., 2013. Accurate identification of polyadenylation sites from 3' end deep sequencing using a naive Bayes classifier. Bioinformatics, 29(20), pp.2564-2571 and 2014, 30(4), pp.596, https://doi.org/10.1093/bioinformatics/btt714
 
 # step-by-step guide
 
