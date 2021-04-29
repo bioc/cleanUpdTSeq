@@ -1,20 +1,25 @@
 Package: cleanUpdTSeq
 Type: Package
-Title: This package classifies putative polyadenylation sites as true
-        or false/internally oligodT primed
-Version: 1.29.0
-Date: 2020-07-09
-Author: Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
+Title: cleanUpdTSeq cleans up artifacts from polyadenylation sites from 
+  oligo(dT)-mediated 3' end RNA sequending data
+Description: This package implements a Naive Bayes classifier for accurately
+  differentiating true polyadenylation sites (pA sites) from oligo(dT)-mediated
+  3' end sequencing such as PAS-Seq, PolyA-Seq and RNA-Seq by filtering out false 
+  polyadenylation sites, mainly due to oligo(dT)-mediated internal priming 
+  during reverse transcription. The classifer is highly accurate and outperforms
+  other heuristic methods.
+Version: 1.29.1
+Date: 2021-04-27
+Author: Sarah Sheppard, Haibo Liu, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 Maintainer: Jianhong Ou <Jianhong.Ou@duke.edu>; Lihua Julie Zhu
         <Julie.Zhu@umassmed.edu>
-Depends: R (>= 3.5.0), BiocGenerics (>= 0.1.0), methods, stats
-Imports: BSgenome, GenomicRanges, seqinr, e1071,
-         GenomeInfoDb, IRanges, utils, BSgenome.Drerio.UCSC.danRer7
-Suggests: BiocStyle, knitr, RUnit
-Description: This package implements a Naive Bayes classifier for accurate
-        identification of polyadenylation sites (pA sites) from oligodT based
-	3 prime end sequencing such as PAS-Seq, PolyA-Seq and RNA-Seq. The classifer 
-	is highly accurate and outperforms heuristic methods.
+Depends: R (>= 3.5.0), BSgenome.Drerio.UCSC.danRer7, methods 
+Imports: BSgenome, GenomicRanges, seqinr, e1071, Biostrings,
+         GenomeInfoDb, IRanges, utils, stringr, stats
+Suggests: BiocStyle, rmarkdown, knitr, RUnit, BiocGenerics (>= 0.1.0)
 License: GPL-2
-biocViews: Sequencing, SequenceMatching, Genetics, GeneRegulation
+biocViews: Sequencing, 3' end sequencing, polyadenylation site, internal priming
 VignetteBuilder: knitr
+RoxygenNote: 7.1.1
+LazyData: true
+Encoding: UTF-8
