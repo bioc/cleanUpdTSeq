@@ -8,7 +8,7 @@ Description: This package implements a Naive Bayes classifier for accurately
   polyadenylation sites, mainly due to oligo(dT)-mediated internal priming 
   during reverse transcription. The classifer is highly accurate and outperforms
   other heuristic methods.
-Version: 1.29.1
+Version: 1.30.0
 Date: 2021-04-27
 Author: Sarah Sheppard, Haibo Liu, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 Maintainer: Jianhong Ou <Jianhong.Ou@duke.edu>; Lihua Julie Zhu
