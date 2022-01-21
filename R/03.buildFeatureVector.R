@@ -35,6 +35,7 @@
 #' @importFrom stringr str_locate_all
 #' @importFrom GenomicRanges strand start end mcols seqnames
 #' @importFrom seqinr s2c count
+#' @importFrom S4Vectors metadata
 #' @import BSgenome.Drerio.UCSC.danRer7
 #' @importMethodsFrom GenomicRanges end<- start<-
 #' 
@@ -138,7 +139,7 @@ buildFeatureVector <- function(peaks,
     ## between A and pA sites.
     mononuc_freq <- 
         as.data.frame(alphabetFrequency(DNAStringSet(downstream.seq), 
-                                        baseOnly = TRUE)[, -5])
+                                        baseOnly = TRUE)[, -5, drop=FALSE])
     A_pos <- str_locate_all(pattern = "A", downstream.seq)
     avg.distanceA2PeakEnd <- 
         vapply(A_pos, function(.x) {mean(.x[,1])}, numeric(1))
@@ -184,12 +185,15 @@ buildFeatureVector <- function(peaks,
         }
     } 
     rownames(feature_df) <- names(peaks)
+    
+    md <- metadata(genome)
     feature_vectors <- new("featureVector", 
                            data = feature_df,
                            info = new("modelInfo", 
-                                    genome = genome,
                                     upstream = as.integer(upstream), 
                                     downstream = as.integer(downstream), 
                                     wordSize = as.integer(wordSize), 
-                                    alphabet = alphabet))
+                                    alphabet = alphabet,
+                                    genome = metadata(genome)$genome,
+                                    metadata = md))
 }

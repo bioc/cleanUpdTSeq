@@ -8,18 +8,18 @@ Description: This package implements a Naive Bayes classifier for accurately
   polyadenylation sites, mainly due to oligo(dT)-mediated internal priming 
   during reverse transcription. The classifer is highly accurate and outperforms
   other heuristic methods.
-Version: 1.33.0
+Version: 1.33.1
 Date: 2021-04-27
 Author: Sarah Sheppard, Haibo Liu, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 Maintainer: Jianhong Ou <Jianhong.Ou@duke.edu>; Lihua Julie Zhu
         <Julie.Zhu@umassmed.edu>
 Depends: R (>= 3.5.0), BSgenome.Drerio.UCSC.danRer7, methods 
 Imports: BSgenome, GenomicRanges, seqinr, e1071, Biostrings,
-         GenomeInfoDb, IRanges, utils, stringr, stats
+         GenomeInfoDb, IRanges, utils, stringr, stats, S4Vectors
 Suggests: BiocStyle, rmarkdown, knitr, RUnit, BiocGenerics (>= 0.1.0)
 License: GPL-2
 biocViews: Sequencing, 3' end sequencing, polyadenylation site, internal priming
 VignetteBuilder: knitr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 LazyData: true
 Encoding: UTF-8

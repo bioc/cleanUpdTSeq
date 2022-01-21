@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.33.1
+-----------------------
+    o fix a bug for one line GRanges reported by Haibo
+    
 CHANGES IN VERSION 1.29.1
 -----------------------
     o rewrite the package by Haibo

@@ -34,7 +34,7 @@ data.NaiveBayes
 A RData containing negative and positive training data
 }
 \examples{
-
+library(BSgenome.Drerio.UCSC.danRer7)
 data(data.NaiveBayes)
 head(str(data.NaiveBayes$Negative))
 head(str(data.NaiveBayes$Positive))

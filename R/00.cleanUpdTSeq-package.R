@@ -10,7 +10,7 @@
 #' to classify putative polyadenylation sites using a Naive Bayes classifier.
 #'
 #' @docType package
-#' @author Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
+#' @author Sarah Sheppard, Haibo Liu, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 #' @name cleanUpdTSeq
 #' @aliases cleanUpdTSeq-package
 globalVariables(c("Drerio"))

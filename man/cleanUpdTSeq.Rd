@@ -16,5 +16,5 @@ the site as true or oligodT primed. This package provides a robust method
 to classify putative polyadenylation sites using a Naive Bayes classifier.
 }
 \author{
-Sarah Sheppard, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
+Sarah Sheppard, Haibo Liu, Jianhong Ou, Nathan Lawson, Lihua Julie Zhu
 }

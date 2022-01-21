@@ -27,7 +27,7 @@
 #'           \item{list("downstream.seq")}{a vector of sequence string}}
 #' @keywords datasets
 #' @examples
-#' 
+#' library(BSgenome.Drerio.UCSC.danRer7)
 #' data(data.NaiveBayes)
 #' head(str(data.NaiveBayes$Negative))
 #' head(str(data.NaiveBayes$Positive))

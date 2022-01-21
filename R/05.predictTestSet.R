@@ -100,10 +100,16 @@ predictTestSet <- function(Ndata.NaiveBayes = NULL,
                     "testSet.NaiveBayes.")
             classifier@info@genome <- testSet.NaiveBayes@info@genome
         }
+        if (!identical(classifier@info@metadata, 
+                       testSet.NaiveBayes@info@metadata)) {
+            message("genome metadata of classifier is different from ", 
+                    "testSet.NaiveBayes.")
+            classifier@info@metadata <- testSet.NaiveBayes@info@metadata
+        }
         if (identical(classifier@info, testSet.NaiveBayes@info)) {
             classifier <- classifier@classifier
         } else {
-            stop("upstream, downstream, wordSize, alphabet and genome of ", 
+            stop("upstream, downstream, wordSize, and alphabet of ", 
                  "classifier and testSet.NaiveBayes must be the same")
         }
     } else {

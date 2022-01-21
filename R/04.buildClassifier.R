@@ -21,6 +21,7 @@
 #' @seealso \code{\link[e1071]{naiveBayes}}
 #' @importFrom e1071 naiveBayes 
 #' @importFrom stats as.formula predict
+#' @importFrom S4Vectors metadata
 #' @examples
 #' 
 #' if (interactive()){
@@ -48,6 +49,7 @@ buildClassifier <- function(Ndata.NaiveBayes,
     fmla <- as.formula(paste("y ~ ", paste(xnam, collapse = "+")))
     trainingData <- rbind(Pdata.NaiveBayes, Ndata.NaiveBayes)
     classifier <- naiveBayes(fmla, data = trainingData, laplace = 1)
+    md <- metadata(genome)
     new("PASclassifier", 
         classifier = classifier, 
         info = new("modelInfo", 
@@ -55,5 +57,6 @@ buildClassifier <- function(Ndata.NaiveBayes,
                    downstream = as.integer(downstream), 
                    wordSize = as.integer(wordSize),
                    alphabet = alphabet,
-                   genome = genome))
+                   genome = md$genome,
+                   metadata = md))
 }
