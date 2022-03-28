@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.33.2
+-----------------------
+    o Merge the codes by Haibo
+    
 CHANGES IN VERSION 1.33.1
 -----------------------
     o fix a bug for one line GRanges reported by Haibo
