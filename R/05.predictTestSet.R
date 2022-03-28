@@ -94,18 +94,6 @@ predictTestSet <- function(Ndata.NaiveBayes = NULL,
         if (!is(classifier, "PASclassifier")) {
             stop("classifier must be an object of class \"PASclassifier\"")
         }
-        if (!identical(classifier@info@genome, 
-                      testSet.NaiveBayes@info@genome)) {
-            message("genome of classifier is different from ", 
-                    "testSet.NaiveBayes.")
-            classifier@info@genome <- testSet.NaiveBayes@info@genome
-        }
-        if (!identical(classifier@info@metadata, 
-                       testSet.NaiveBayes@info@metadata)) {
-            message("genome metadata of classifier is different from ", 
-                    "testSet.NaiveBayes.")
-            classifier@info@metadata <- testSet.NaiveBayes@info@metadata
-        }
         if (identical(classifier@info, testSet.NaiveBayes@info)) {
             classifier <- classifier@classifier
         } else {

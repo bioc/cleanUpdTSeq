@@ -186,14 +186,11 @@ buildFeatureVector <- function(peaks,
     } 
     rownames(feature_df) <- names(peaks)
     
-    md <- metadata(genome)
     feature_vectors <- new("featureVector", 
                            data = feature_df,
                            info = new("modelInfo", 
                                     upstream = as.integer(upstream), 
                                     downstream = as.integer(downstream), 
                                     wordSize = as.integer(wordSize), 
-                                    alphabet = alphabet,
-                                    genome = metadata(genome)$genome,
-                                    metadata = md))
+                                    alphabet = alphabet))
 }

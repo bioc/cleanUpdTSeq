@@ -7,8 +7,6 @@
 #' training data, described further in \code{\link[cleanUpdTSeq]{data.NaiveBayes}}.
 #' @param Pdata.NaiveBayes A data.frame, containing features for the positive 
 #' training data, described further in \code{\link[cleanUpdTSeq]{data.NaiveBayes}}.
-#' @param genome Name of the genome to get sequences from. To find out a
-#' list of available genomes, please type BSgenome::available.genomes() in R.
 #' @param upstream An integer(1) vector, length of upstream sequence to retrieve.
 #' @param downstream An integer(1) vector, length of downstream sequence to 
 #' retrieve.
@@ -37,7 +35,6 @@ buildClassifier <- function(Ndata.NaiveBayes,
                             upstream = 40L,
                             downstream = 30L, 
                             wordSize = 6L,
-                            genome = Drerio, 
                             alphabet = c("ACGT")){
     if ((!class(upstream) %in% c("integer", "numeric")) ||
            (!class(downstream) %in% c("integer", "numeric")) ||
@@ -49,14 +46,12 @@ buildClassifier <- function(Ndata.NaiveBayes,
     fmla <- as.formula(paste("y ~ ", paste(xnam, collapse = "+")))
     trainingData <- rbind(Pdata.NaiveBayes, Ndata.NaiveBayes)
     classifier <- naiveBayes(fmla, data = trainingData, laplace = 1)
-    md <- metadata(genome)
+
     new("PASclassifier", 
         classifier = classifier, 
         info = new("modelInfo", 
                    upstream = as.integer(upstream), 
                    downstream = as.integer(downstream), 
                    wordSize = as.integer(wordSize),
-                   alphabet = alphabet,
-                   genome = md$genome,
-                   metadata = md))
+                   alphabet = alphabet))
 }

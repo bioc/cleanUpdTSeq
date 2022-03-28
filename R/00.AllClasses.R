@@ -7,7 +7,7 @@
 #' @aliases modelInfo-class modelInfo $,modelInfo-method $<-,modelInfo-method
 #' @docType class
 #' @section Objects from the Class: Objects can be created by calls of the form
-#' \code{new("modelInfo", upstream, downstream, wordSize, alphabe, genome, metadata)}.
+#' \code{new("modelInfo", upstream, downstream, wordSize, alphabet)}.
 #' @importClassesFrom BSgenome BSgenome
 #' @exportClass modelInfo PASclassifier featureVector
 #' @keywords classes
@@ -15,9 +15,7 @@
 setClass("modelInfo", slots = c(upstream="integer",
                                 downstream="integer", 
                                 wordSize="integer",
-                                alphabet="character",
-                                genome="character",
-                                metadata="list"))
+                                alphabet="character"))
 
 
 setMethod("$", "modelInfo", function(x, name) slot(x, name))

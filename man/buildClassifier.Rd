@@ -10,7 +10,6 @@ buildClassifier(
   upstream = 40L,
   downstream = 30L,
   wordSize = 6L,
-  genome = Drerio,
   alphabet = c("ACGT")
 )
 }
@@ -28,9 +27,6 @@ retrieve.}
 
 \item{wordSize}{An integer(1) vector,  size of the kmer feature for the
 upstream sequence. wordSize = 6 should always be used.}
-
-\item{genome}{Name of the genome to get sequences from. To find out a
-list of available genomes, please type BSgenome::available.genomes() in R.}
 
 \item{alphabet}{A character(1) vector, a string containing DNA bases.
 By default, "ACTG".}

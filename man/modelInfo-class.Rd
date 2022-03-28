@@ -13,7 +13,7 @@ to use in the analysis
 }
 \section{Objects from the Class}{
  Objects can be created by calls of the form
-\code{new("modelInfo", upstream, downstream, wordSize, alphabe, genome, metadata)}.
+\code{new("modelInfo", upstream, downstream, wordSize, alphabet)}.
 }
 
 \keyword{classes}
