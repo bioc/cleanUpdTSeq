@@ -14,7 +14,7 @@
 #'     \item{upstream.seq}{sequence upstream pA site, including pA site}
 #'     \item{downstream.seq}{sequence downstream pA site}
 #' }
-#' @importFrom GenomeInfoDb seqlengths
+#' @importFrom Seqinfo seqlengths
 #' @importFrom Biostrings getSeq
 #' @author Haibo Liu
 #' @export
